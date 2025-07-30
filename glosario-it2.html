@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Comienzo Metadatos con información  documentación -->
+    <meta name="author" content="Li. Felipe Martínez">
+    <meta name="description" content="Glosario de términos de seguros para el proyecto del Grupo Ins Costa Rica.">
+    <meta name="generator" content="Versión 1.0 - index.html">
+    <meta name="date" content="2025-07-30" scheme="YYYY-MM-DD">
+    <meta name="version" content="1.0">
+    <meta name="archivo" content="index.html">
+    <meta name="notas" content="No usa API">
+    <!-- Final Metadatos con información de documentación -->
+    <title>Glosario de Términos de Seguros - CONSIS International</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styles & Variables --- */
+        :root {
+            --primary-blue: #005A9C;
+            --secondary-orange: #F68D2B;
+            --dark-gray: #333333;
+            --light-gray-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            background-color: var(--light-gray-bg);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* --- Header --- */
+        .main-header {
+            background-color: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .header-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .header-content h2 {
+            color: var(--secondary-orange);
+            font-size: 1.25rem;
+            margin: 0.5rem 0 0 0;
+            font-weight: 400;
+        }
+        .header-p p {
+            color: var(--primary-blue);
+        }
+        .print-button {
+            background-color: var(--secondary-orange);
+            color: var(--white);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .print-button:hover {
+            background-color: #e07b24; /* Darker orange */
+            transform: translateY(-2px);
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #757575;
+            text-align: center;
+        }
+
+        /* --- Sticky Alphabetical Navigation --- */
+        .alpha-nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 1rem 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .alpha-nav a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .alpha-nav a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Main Content & Layout --- */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --- Alphabetical Section --- */
+        .letter-section {
+            padding-top: 4rem; /* Offset for sticky nav */
+            margin-top: -4rem;
+            margin-bottom: 3rem;
+        }
+
+        .letter-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            color: var(--secondary-orange);
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Term Card --- */
+        .term-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-left: 5px solid var(--primary-blue);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .term-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .term-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .term-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .term-card p {
+            margin: 0;
+        }
+
+        .term-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .term-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Back to Top Link --- */
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem;
+            border-radius: 5px;
+            background-color: #eef5fc;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-to-top:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+            }
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            .header-content h2 {
+                font-size: 1rem;
+            }
+            .logo-placeholder {
+                width: 20px;
+                height: 20px;
+            }
+            .alpha-nav {
+                gap: 0.2rem;
+                padding: 0.8rem 0.5rem;
+            }
+            .alpha-nav a {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .term-card {
+                padding: 1.5rem;
+            }
+            .term-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="alpha-nav" </div>
+    <header class="main-header">
+        
+       <!-- <div class="logo-placeholder"> </div> -->
+       <img src="logo-consis-200x56.png" alt="Logo Consis University">
+        <div class="header-content">
+            
+            <h1>Glosario de Términos de Seguros</h1>
+            <h2>Comparativo entre Costa Rica y otros países de Latinoamérica</h2>
+            
+            <button id="print-pdf-btn" class="print-button">🖨️ Imprimir Glosario en PDF</button>
+        </div>
+        <img src="logo-university-200x56.png" alt="Logo Consis University">
+       <!-- <div class="logo-placeholder">logo-university</div> -->
+    </header>
+   
+    <nav class="alpha-nav" id="alpha-nav">
+        <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a><a href="#F">F</a><a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#J">J</a><a href="#L">L</a><a href="#M">M</a><a href="#N">N</a><a href="#O">O</a><a href="#P">P</a><a href="#Q">Q</a><a href="#R">R</a><a href="#S">S</a><a href="#T">T</a><a href="#U">U</a><a href="#V">V</a><a href="#W">W</a><a href="#Z">Z</a>
+        
+    </nav>
+    <div class="header-p">
+    <p align="center" >Al final de cada letra puede volver al índice</p> 
+    </div>
+    <main class="container">
+        
+        <!-- Section A -->
+        <section id="A" class="letter-section">
+            <h2 class="letter-header">A</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Abandono / Abandono de Reclamo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Renuncia del asegurado a un bien dañado a favor de la aseguradora. / Renuncia formal a continuar con una reclamación.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cesión de Derechos (México)</li>
+                    <li>Abandono Legal (España)</li>
+                    <li>Desistimiento de Reclamación (España)</li>
+                    <li>Claim Withdrawal (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Acción Directa</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Derecho del perjudicado a demandar a la aseguradora del responsable.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Acción de Regreso (legal)</li>
+                    <li>Direct Action (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Acción Subrogatoria</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Derecho de la aseguradora a reclamar a terceros responsables del siniestro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Subrogación (general)</li>
+                    <li>Derecho de Repetición (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Acreedor Prendario</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Entidad con derecho sobre bienes asegurados como garantía de pago.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Lienholder (EE.UU.)</li>
+                    <li>Acreedor Hipotecario (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Acta Circunstanciada</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Informe detallado de hechos en siniestros complejos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Acta de Hechos (México)</li>
+                    <li>Informe Pormenorizado (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Acta de Inspección</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Documento que detalla daños durante una inspección técnica.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Informe de Peritaje (Argentina)</li>
+                    <li>Acta de Valuación (Colombia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Agente de Seguros</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Persona física o jurídica vinculada contractualmente a una única aseguradora, autorizada por la SUGESE para vender sus productos, promover la contratación de seguros y asesorar a los clientes exclusivamente sobre las pólizas de esa compañía.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Agente Exclusivo (España)</li>
+                    <li>Agente Vinculado (México, Colombia)</li>
+                    <li>Captive Agent (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Ajustador</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Profesional que evalúa daños y calcula indemnizaciones.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Ajustador (México, Colombia)</li>
+                    <li>Perito (España, Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Ajuste de Prima</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Recálculo de la prima por cambios en el riesgo.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Premium Adjustment (EE.UU.)</li>
+                    <li>Repricing (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Análisis de Pérdida Máxima Probable</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cálculo del peor escenario realista.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>PML Analysis (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Asegurado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Persona o bien protegido por el seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Titular (Argentina, Uruguay)</li>
+                    <li>Asegurado (México, Colombia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Aseguradora</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Empresa que asume riesgos y paga indemnizaciones.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Compañía de Seguros (México, Colombia)</li>
+                    <li>Entidad Aseguradora (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Avalúo Previa</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Valoración de bienes antes de emitir la póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Inspección Técnica (México)</li>
+                    <li>Peritaje Previo (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Avería Gruesa</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Daños intencionales para salvar la embarcación (compartidos entre propietario y aseguradora).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>General Average (internacional)</li>
+                    <li>Avería Común (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Avería Particular</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Daños que afectan solo al asegurado (no compartidos).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Particular Average (internacional)</li>
+                    <li>Avería Simple (España)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section B -->
+        <section id="B" class="letter-section">
+            <h2 class="letter-header">B</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Beneficiario / Beneficio por Muerte</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Persona que recibe la indemnización (ej: en seguros de vida). / Pago único al beneficiario en seguros de vida.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Beneficiario (todos los países), Designado (en algunos contratos)</li>
+                    <li>Capital por Fallecimiento (España)</li>
+                    <li>Indemnización por Deceso (Chile)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Bienes en Tránsito</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para mercancías durante transporte terrestre, marítimo o aéreo.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Carga en Movimiento (general)</li>
+                    <li>Goods in Transit (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Bienes Excluidos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Objetos expresamente no cubiertos (ej.: mascotas en seguros de hogar).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Exclusiones Específicas (general)</li>
+                    <li>Propiedades No Asegurables (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Bienes Personales</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para objetos dentro del hogar.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Contenidos (España)</li>
+                    <li>Personal Property (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Bono de No Siniestralidad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Descuento en primas por no presentar reclamaciones.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Descuento por Siniestros Cero (Colombia)</li>
+                    <li>No-Claim Bonus (Reino Unido)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Brecha de Datos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Fuga o robo de información digital cubierta.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Data Breach (internacional)</li>
+                    <li>Filtración de Datos (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Brecha de Satélites</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por malfuncionamiento orbital.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Satélite Gap Coverage (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section C -->
+        <section id="C" class="letter-section">
+            <h2 class="letter-header">C</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Capa de Catástrofe</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reaseguro para eventos masivos (huracanes, terremotos).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Catastrophe Layer (global)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Capa de Exceso</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reaseguro que cubre pérdidas superiores a un monto específico.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Excess Layer (EE.UU.)</li>
+                    <li>Capa de Excedencia (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Capitalización</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cálculo del valor futuro de primas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Interés Compuesto (finanzas)</li>
+                    <li>Compounding (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Carencia para Enfermedades Graves</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Período de espera para cáncer o infartos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Waiting Period (EE.UU.)</li>
+                    <li>Exclusión Temporal (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Carencia para Parto</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Período de espera para cobertura de maternidad.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Waiting Period for Maternity (EE.UU.)</li>
+                    <li>Exclusión Temporal de Parto (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Carta de Abono</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Documento que acredita pago parcial de indemnización.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Certificado de Pago Parcial (Chile)</li>
+                    <li>Acuse de Recibo Indemnizatorio (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Carta de Garantía</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Documento que sustituye indemnización para reparaciones urgentes.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Carta de Aval (México)</li>
+                    <li>Letter of Undertaking (Reino Unido)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Causa de Fuerza Mayor</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Evento imprevisible e inevitable (ej: terremoto, huracán) que exonera responsabilidad.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Caso Fortuito (México, Colombia)</li>
+                    <li>Fuerza Mayor (general)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Ciberataque</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por daños por hacking o ransomware.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Ataque Informático (España)</li>
+                    <li>Cyber Attack (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Condición específica dentro de una póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cláusula (general)</li>
+                    <li>Condición Particular (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula CLEAR</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Exclusión de daños por corrosión, fugas, erosión o abrasión.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>C.L.E.A.R. Warranty (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Barras</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Exclusión de cobertura en puertos con conflictos armados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>War Risk Exclusion (EE.UU.)</li>
+                    <li>Zona Roja (reaseguro)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Contribución</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Obliga a otras aseguradoras a compartir el pago si existen pólizas concurrentes.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Doble Seguro (legal)</li>
+                    <li>Coinsurance Clause (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Puerto Seguro</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Exclusión por permanecer en puertos con conflictos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Safe Port Warranty (EE.UU.)</li>
+                    <li>Puerto de Riesgo (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Reaseguro Abierto</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Obliga a aceptar riscos dentro de parámetros.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Facultative Obligatory (Lloyd's)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Reconstrucción</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Obligación de reconstruir en el mismo lugar.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reedificación Forzosa (España)</li>
+                    <li>Rebuilding Clause (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Rehabilitación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reactivación de coberturas suspendidas por siniestros previos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reincorporación de Garantías (Argentina)</li>
+                    <li>Reinstalación de Cobertura (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Segregación de Riesgos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Separa coberturas para evitar nulidad total.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Severability Clause (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Segunda Lesión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>En reaseguro, cubre siniestros recurrentes.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Second Injury Fund (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula de Subrogación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Derecho de la aseguradora a reclamar a terceros.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Derecho de Repetición (Argentina)</li>
+                    <li>Subrogation Clause (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cláusula Penal</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Multa contractual por incumplimiento de condiciones.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Sanción Contractual (legal)</li>
+                    <li>Liquidated Damages (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cobertura</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Riesgos específicos que protege el seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cobertura (general)</li>
+                    <li>Garantía (Chile, en algunos contextos)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cobertura Adicional</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Protección extra contratada aparte de la póliza base.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Endoso Ampliatorio (México)</li>
+                    <li>Rider (EE.UU./seguros de vida)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cobertura de Cristales</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Protección específica para parabrisas y ventanas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cristales Laterales (México)</li>
+                    <li>Glass Coverage (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Cobertura por Sequía</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Indemnización por falta de lluvias.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Seguro Paramétrico de Sequía (México)</li>
+                    <li>Drought Coverage (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Contratante</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Persona física o jurídica que firma el contrato de seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Tomador (España)</li>
+                    <li>Asegurado (cuando es la misma persona)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Corredor de Seguros</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Persona física o jurídica independiente de cualquier aseguradora, autorizada por la SUGESE para asesorar de forma objetiva a los clientes, analizar diferentes opciones del mercado y gestionar la contratación de pólizas con múltiples aseguradoras, buscando siempre la mejor solución para los intereses del asegurado.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Broker de Seguros (internacional, anglicismo común)</li>
+                    <li>Productor Asesor de Seguros (Argentina)</li>
+                    <li>Mediador de Seguros Independiente (España)</li>
+                    <li>Consultor de Seguros (general)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section D -->
+        <section id="D" class="letter-section">
+            <h2 class="letter-header">D</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Dación en Pago</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Entrega de un bien para extinguir la deuda con la aseguradora.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Entrega a Título de Pago (legal)</li>
+                    <li>Deed in Lieu (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Daño a Fibra Óptica</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para cortes en cables submarinos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Submarine Cable Damage (global)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Daño Consecuencial</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Pérdidas indirectas derivadas de un siniestro (ej: pérdida de ingresos).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Daño Indirecto (legal)</li>
+                    <li>Lucro Cesante (Argentina en contextos civiles)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Daños Materiales</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por reparación o reposición del vehículo propio.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Daños Propios (México)</li>
+                    <li>Cobertura Integral (Colombia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Daños por Granizo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para abolladuras por granizo.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Daños Atmosféricos (Argentina)</li>
+                    <li>Hail Damage (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Declaración de Salud</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Documento donde el asegurado informa su estado de salud (seguros de vida/salud).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cuestionario Médico (Argentina)</li>
+                    <li>Declaración de Riesgo (Chile)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Declaración de Valor</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Valor asignado a bienes asegurados (ej: joyas, arte).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Valor Declarado (general)</li>
+                    <li>Avalúo Contractual (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Deducible</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Monto que paga el asegurado antes de que la aseguradora cubra el resto.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Franquicia (Argentina, Chile, España)</li>
+                    <li>Deducible (México, Colombia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Defecto de Diseño Latente</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Fallas ocultas en planos que causan daños post-construcción.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Latent Defect (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Derecho de Póliza</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Comisión que recibe el agente por la venta del seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Comisión de Suscripción (México)</li>
+                    <li>Honorarios de Corretaje (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Derecho de Rescisión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Facultad de cancelar la póliza por incumplimiento.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Right to Cancel (EE.UU.)</li>
+                    <li>Terminación Contractual (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Derecho de Retención</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Facultad de la aseguradora para retener documentos hasta resolver reclamos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Retención de Garantías (Argentina)</li>
+                    <li>Withholding Right (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Día de Carencia</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Período de espera para cirugías o tratamientos especiales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Período de Espera (general)</li>
+                    <li>Exclusión Temporal (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Doctrina de la Expectativa</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Derecho a cobertura cuando el agente cometió errores.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reasonable Expectations Doctrine (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section E -->
+        <section id="E" class="letter-section">
+            <h2 class="letter-header">E</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Efecto Stacking</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Acumulación de límites en múltiples pólizas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Stacking Coverage (jurisprudencia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Endoso</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Modificación de la póliza después de su emisión.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Endoso (general)</li>
+                    <li>Rider (en seguros de vida, EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Endoso de Cancelación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Documento que formaliza la terminación de una póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Endoso de Rescisión (España)</li>
+                    <li>Rider de Terminación (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Endoso de Cesión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Transferencia de derechos de la póliza a un tercero.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Asignación de Derechos (legal)</li>
+                    <li>Assignment Endorsement (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Endoso de Exclusión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Modificación que elimina una cobertura específica.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Endoso Restrictivo (Argentina)</li>
+                    <li>Exclusion Rider (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Endoso de Renovación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Modificación de términos al renovar una póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Endoso de Actualización (México)</li>
+                    <li>Anexo de Renovación (Perú)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Enfermedad Preexistente</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Condición médica diagnosticada antes de contratar el seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Enfermedad Previa (México)</li>
+                    <li>Condición Preexistente (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Enfermedad Terminal</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Condición con expectativa de vida menor a 12 meses (para pago anticipado).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Terminal Illness (EE.UU.)</li>
+                    <li>Padecimiento Terminal (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Equipo Electrónico</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para dispositivos electrónicos contra fallas o daños.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Equipo Eléctrico (técnico)</li>
+                    <li>Cobertura Tecnológica (marketing)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Error de Software</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Responsabilidad por fallas en programas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Bug de Programación (Argentina)</li>
+                    <li>Software Glitch (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Error u Omisión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cubre negligencias en servicios profesionales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>E&O Insurance (EE.UU.)</li>
+                    <li>Malpraxis Profesional (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Errores de Diseño</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por fallas en planos o especificaciones técnicas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Defectos de Proyecto (España)</li>
+                    <li>Professional Liability (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Evento Catastrófico</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Siniestro que afecta a múltiples asegurados simultáneamente.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cat Loss (EE.UU.)</li>
+                    <li>Siniestro Masivo (general)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Exceso</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Monto que excede la suma asegurada (responsabilidad del asegurado).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Diferencia a Cargo (Argentina)</li>
+                    <li>Exceso (general)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Exclusión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Situaciones NO cubiertas por el seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Exclusión (general)</li>
+                    <li>Limitación (en algunos contratos)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Exclusión de Guerra Cibernética</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>No cubre ataques patrocinados por estados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cyber War Exclusion (Lloyd's)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Exclusión de Terremoto</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Riesgo sísmico excluido (a menos que se contrate adicional).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Exclusión de Sismo (México)</li>
+                    <li>Earthquake Exclusion (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Exclusión por Deporte Extremo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>No cubre actividades como paracaidismo.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>High-Risk Sports Exclusion (EE.UU.)</li>
+                    <li>Cláusula de Riesgo (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Extensión de Cobertura</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Ampliación de garantías a conductores no listados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Conductores Ocasionales (Colombia)</li>
+                    <li>Permissive Use (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Extorsión Digital</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por ataques de ransomware o chantaje electrónico.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Ciberextorsión (general)</li>
+                    <li>Digital Extortion (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section F -->
+        <section id="F" class="letter-section">
+            <h2 class="letter-header">F</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Facultativo Obligatorio</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reaseguro donde el cedente debe ceder ciertos riesgos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Facultative Obligatory (EE.UU.)</li>
+                    <li>Semi-Automático (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fenómeno Atmosférico</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Eventos climáticos cubiertos (granizo, tormentas).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Evento Natural (general)</li>
+                    <li>Causa Climática (Colombia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fianza</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Garantía financiera para cumplir obligaciones legales o contractuales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Garantía Asegurada (Colombia)</li>
+                    <li>Bond (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fianza Judicial</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Garantía para cubrir riesgos en procesos legales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Garantía de Juicio (México)</li>
+                    <li>Court Bond (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fidelidad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Seguro contra fraudes cometidos por empleados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Caución (Argentina)</li>
+                    <li>Fidelity Bond (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fidelidad Bancaria</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cubre fraudes cometidos por empleados de instituciones financieras.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Bankers Blanket Bond (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Flete Prepagado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para fletes ya pagados en caso de pérdida.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Freight Prepaid (internacional)</li>
+                    <li>Flete Pagado (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fondo de Garantía</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Mecanismo para indemnizar cuando una aseguradora quiebra.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Consorcio de Compensación (España)</li>
+                    <li>Insolvency Fund (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Fondo de Reserva</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Capital que las aseguradoras mantienen para cubrir obligaciones futuras.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Provisiones Técnicas (México, España)</li>
+                    <li>Reserva de Riesgos (Colombia)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section G -->
+        <section id="G" class="letter-section">
+            <h2 class="letter-header">G</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Garantía de Licitación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Asegura el cumplimiento de ofertas en procesos públicos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Bid Bond (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Garantía de Pago Anticipado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Protege adelantos no devueltos en contratos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Advance Payment Bond (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Gasto de Salvamento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Costos para minimizar daños durante un siniestro (reembolsables).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Gastos de Mitigación (EE.UU.)</li>
+                    <li>Costos de Rescate (Chile)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Gastos de Defensa</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cubre costos legales en juicios contra el asegurado.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Defensa Jurídica (general)</li>
+                    <li>Legal Costs (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Gastos Médicos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para atención hospitalaria, medicinas y tratamientos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Asistencia Médica (Argentina)</li>
+                    <li>Gastos de Salud (Chile)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Gráfico de Coberturas</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Diagrama que resume las protecciones de la póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Matriz de Garantías (Argentina)</li>
+                    <li>Esquema de Protección (México)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section H -->
+        <section id="H" class="letter-section">
+            <h2 class="letter-header">H</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Hijo Discapacitado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura extendida para hijos con discapacidad en seguros de vida.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Beneficio para Dependientes (general)</li>
+                    <li>Cláusula de Discapacidad (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Hora de Vuelo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura específica para aeronaves por tiempo de operación.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Flight Hours (internacional)</li>
+                    <li>Horas de Operación (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Hospitalización</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por estancia en hospital.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Internación (Argentina)</li>
+                    <li>Estancia Hospitalaria (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Huelga y Alboroto Popular</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por daños durante protestas o paros.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Desórdenes Civiles (general)</li>
+                    <li>Riot and Civil Commotion (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section I -->
+        <section id="I" class="letter-section">
+            <h2 class="letter-header">I</h2>
+            <div class="term-card">
+                <h3>🇨🇷 IBNR (Incurred But Not Reported)</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reservas para siniestros ocurridos pero no denunciados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Siniestros Incurridos No Reportados (general)</li>
+                    <li>IBNR (global)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Incapacidad Total y Permanente</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Pérdida absoluta de capacidad laboral.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Total Disability (EE.UU.)</li>
+                    <li>Invalidez Absoluta (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Incremento Automático</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Ajuste anual de la suma asegurada por inflación.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Indexación (Chile)</li>
+                    <li>Ajuste por IPC (Colombia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Incremento de Suma Asegurada</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Ajuste automático por inflación en pólizas de propiedad.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Indexación (Chile)</li>
+                    <li>Inflation Guard (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Indemnización</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Pago por parte de la aseguradora tras un siniestro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Indemnización (general)</li>
+                    <li>Compensación (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Indemnización a Valor Nuevo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Pago para reponer bienes sin considerar depreciación.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reposición a Nuevo (Argentina)</li>
+                    <li>Replacement Cost (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Indemnización Diaria</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Pago fijo por día de hospitalización.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Asignación Hospitalaria (Colombia)</li>
+                    <li>Hospital Cash Benefit (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Inhabilitación Profesional</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por prohibición legal de ejercer una profesión.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Interdicción Profesional (legal)</li>
+                    <li>Licencia Obligatoria (seguros médicos)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Interferencia Electromagnética</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Indemnización por fallas causadas por EMI.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>EMI Coverage (UE)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Intermediario de Seguros</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Intermediario autorizado que vende pólizas y asesora a clientes.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Corredor de Seguros (Chile, Perú)</li>
+                    <li>Productor de Seguros (Argentina)</li>
+                    <li>Broker (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Interrupción de Negocios Digital</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Indemnización por caídas de sistemas operativos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Business Interruption - IT (EE.UU.)</li>
+                    <li>Lucro Cesante Digital (Brasil)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Invalidez Total</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Incapacidad permanente para trabajar (cubierta en seguros de vida/salud).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Incapacidad Permanente (México)</li>
+                    <li>Invalidez Absoluta (España)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section J -->
+        <section id="J" class="letter-section">
+            <h2 class="letter-header">J</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Juicio de Valor</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Discrepancia sobre el monto de indemnización.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Disputa de Valuación (México)</li>
+                    <li>Conflicto de Tasación (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Juicio de Valoración</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Proceso para determinar el monto de indemnización en disputas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Peritaje Contradictorio (Argentina)</li>
+                    <li>Appraisal Process (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section L -->
+        <section id="L" class="letter-section">
+            <h2 class="letter-header">L</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Ley de Seguros</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Legislación que regula la actividad aseguradora.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Código de Seguros (México)</li>
+                    <li>Insurance Law (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Límite Agregado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Máximo que pagará la aseguradora por múltiples siniestros en un período.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Límite Acumulado (EE.UU.)</li>
+                    <li>Tope Anual (seguros médicos)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Límite de Indemnización</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Máximo que pagará la aseguradora por un siniestro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Límite de Cobertura (general)</li>
+                    <li>Tope Indemnizatorio (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Límite por Evento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Máximo pagable por un siniestro específico.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Límite por Ocurrencia (reaseguro)</li>
+                    <li>Cobertura por Incidente (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Límite por Víctima</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Máximo pagable por persona en seguros de responsabilidad civil.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Límite Individual (general)</li>
+                    <li>Per Person Limit (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section M -->
+        <section id="M" class="letter-section">
+            <h2 class="letter-header">M</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Modelación de Exposiciones Acumuladas</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Evaluación de riesgos correlacionados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Aggregate Exposure Modeling (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Montaje Electromecánico</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para instalación de maquinaria industrial.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Erection All Risks (internacional)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Mora de la Aseguradora</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Retraso injustificado en el pago de indemnizaciones.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Incumplimiento de Pago (legal)</li>
+                    <li>Demora Indebida (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Mora del Asegurado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Incumplimiento en el pago de primas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Morosidad (España)</li>
+                    <li>Impago (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Mora en la Denuncia</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Retraso en notificar un siniestro según plazo contractual.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Demora en la Declaración (legal)</li>
+                    <li>Late Notice (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Moratoria</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Período de gracia para pagar la prima sin cancelar la póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Gracia de Pago (México)</li>
+                    <li>Periodo de Tolerancia (Colombia)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section N -->
+        <section id="N" class="letter-section">
+            <h2 class="letter-header">N</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Negligencia Comparativa</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reducción de indemnización por culpa parcial del asegurado.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Culpa Concurrente (legal)</li>
+                    <li>Comparative Fault (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Negligencia Grave</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Conducta temeraria que anula la cobertura.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Dolo (legal)</li>
+                    <li>Imprudencia Temeraria (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Notificación de Siniestro</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Comunicación formal del asegurado a la aseguradora sobre un evento cubierto.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Aviso de Ocurrencia (Chile)</li>
+                    <li>Denuncia de Siniestro (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Notificación Tardía</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reclamación presentada fuera de plazos contractuales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Denuncia Extemporánea (legal)</li>
+                    <li>Aviso Fuera de Término (México)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section O -->
+        <section id="O" class="letter-section">
+            <h2 class="letter-header">O</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Orden de Pérdida</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Secuencia en que se aplican deducibles y coberturas en siniestros complejos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Jerarquía de Indemnización (técnico)</li>
+                    <li>Prioridad de Pagos (reaseguro)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Orden de Prioridad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Secuencia para pagar múltiples reclamaciones con fondos limitados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Jerarquía de Pagos (legal)</li>
+                    <li>Payment Hierarchy (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Orden de Reparación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Autorización previa para proceder con reparaciones cubiertas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Autorización de Servicio (México)</li>
+                    <li>Ok de Taller (informal en talleres)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section P -->
+        <section id="P" class="letter-section">
+            <h2 class="letter-header">P</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida de Alquiler</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por ingresos cesantes si la propiedad no es habitable.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Lucro Cesante Inmobiliario (legal)</li>
+                    <li>Rental Income Loss (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida de Beneficios</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por ingresos cesantes (ej: negocios paralizados).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Lucro Cesante (legal)</li>
+                    <li>Pérdida de Ganancias (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida de Datos Cuánticos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para encriptación cuántica comprometida.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Quantum Data Loss (nuevo)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida de Licencia</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para profesionales que pierden autorización para ejercer.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Pérdida de Habilitación (Argentina)</li>
+                    <li>License Protection (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida de Mercancías</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por daño o extravío en transporte.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Siniestro Marítimo/Terrestre (según contexto)</li>
+                    <li>Cargo Loss (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida de Vuelo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para aeronaves desaparecidas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Missing Aircraft (EE.UU.)</li>
+                    <li>Pérdida Total Física (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida Parcial</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Daño que no alcanza a ser "pérdida total".</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Siniestro Parcial (Argentina)</li>
+                    <li>Daño Parcial (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida Total</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cuando el costo de reparación supera el valor del bien asegurado.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Pérdida Total (general)</li>
+                    <li>Siniestro Total (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pérdida Total Constructiva</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cuando el costo de reparación supera el 75% del valor del vehículo.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Pérdida Total Económica (México)</li>
+                    <li>Constructive Total Loss (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Período de Carencia</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Tiempo de espera para acceder a ciertas coberturas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Período de Espera (México)</li>
+                    <li>Carencia (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Período de Crecimiento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Etapa vegetativa cubierta para cultivos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Ciclo Agrícola (Argentina)</li>
+                    <li>Growing Season (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Período de Garantía</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Tiempo en que la semilla o planta está cubierta.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Período de Cobertura (general)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Período de Mantenimiento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura post construcción para reparar defectos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Garantía de Obra (México)</li>
+                    <li>Defects Liability Period (Reino Unido)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Período de Supervivencia</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Tiempo que debe vivir el asegurado tras diagnóstico para cobrar.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Survival Period (EE.UU.)</li>
+                    <li>Plazo de Supervivencia (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Período Retroactivo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por errores cometidos antes de contratar el seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Retroactive Coverage (EE.UU.)</li>
+                    <li>Cláusula Retroactiva (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Póliza</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Contrato que formaliza el seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Póliza (general)</li>
+                    <li>Contrato de Seguro (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Ponderación de Riesgo Geográfico</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Ajuste de primas por ubicación exacta.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Geographic Risk Rating (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Prima</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Precio del seguro (mensual/anual).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Premio (Argentina, Uruguay)</li>
+                    <li>Cuota (informal en algunos países)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Prima Nivelada</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Prima que no aumenta con la edad en seguros de vida.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Prima Fija (México)</li>
+                    <li>Level Premium (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Prima Pura</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Costo teórico del riesgo sin gastos ni ganancias.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Prima Técnica (Argentina)</li>
+                    <li>Pure Premium (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Proporción Variable</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reaseguro donde la cesión varía según siniestralidad.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Sliding Scale Treaty (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Pruebas de Presión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Periodo de mayor riesgo durante pruebas de tuberías/calderas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Pressure Testing Clause (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section Q -->
+        <section id="Q" class="letter-section">
+            <h2 class="letter-header">Q</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Quebranto de Material</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Deterioro normal no cubierto (común en seguros industriales).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Desgaste Natural (general)</li>
+                    <li>Depreciación (contable)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Queja de Ajuste</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reclamo por desacuerdo con la valoración de daños.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Impugnación de Peritaje (legal)</li>
+                    <li>Claim Dispute (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Queja Técnica</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reclamo formal por mala praxis en ajuste de siniestros.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reclamo de Ajuste (Argentina)</li>
+                    <li>Disconformidad de Peritaje (España)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section R -->
+        <section id="R" class="letter-section">
+            <h2 class="letter-header">R</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Reasegurador Cedente</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Aseguradora que transfiere parte del riesgo a un reasegurador.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Compañía Directa (cuando actúa como originadora)</li>
+                    <li>Cedente (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Reaseguro</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Seguro que las aseguradoras contratan para cubrir sus propios riesgos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reaseguro (general)</li>
+                    <li>Retrocesión (cuando el reasegurador cede parte a otra empresa)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Reaseguro Facultativo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Contrato caso por caso (no obligatorio para el reasegurador).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reaseguro No Automático (general)</li>
+                    <li>Facultative Reinsurance (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Reclamación Fraudulenta</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Solicitud de indemnización con información falsa.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Fraude de Seguro (general)</li>
+                    <li>Siniestro Simulado (legal)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Reclamo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Solicitud formal para recibir una indemnización.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Reclamación (España)</li>
+                    <li>Denuncia (Chile, en contextos legales)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Recurso de Amparo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Recurso legal contra negativas de indemnización.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Demanda de Cobertura (México)</li>
+                    <li>Recurso de Protección (Chile)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Regla de Proporción</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cálculo de indemnización cuando hay infravaloración del riesgo.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Regla de Valor Declarado (España)</li>
+                    <li>Pro Rata Rule (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Renovación Automática</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Póliza que se renueva sin firma expresa si no hay cancelación.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Tácita Reconducción (España)</li>
+                    <li>Renovación Implícita (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad Civil (RC)</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por daños a terceros.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Responsabilidad Civil (general)</li>
+                    <li>Daños a Terceros (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad Civil Extracontractual</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Daños a terceros no derivados de un contrato.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Responsabilidad Civil (general)</li>
+                    <li>Daños a Terceros (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad Civil Familiar</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por daños causados por familiares directos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>RC Familiar (Argentina)</li>
+                    <li>Family Liability (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad de Consultores</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por errores en supervisiones técnicas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Professional Indemnity for Engineers (UK)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad por Datos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por filtraciones de información.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Data Breach Liability (EE.UU.)</li>
+                    <li>Responsabilidad Digital (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad por IA</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Daños causados por decisiones algorítmicas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>AI Liability (UE)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Responsabilidad por Interrupción de Servicio</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Daños a clientes por caídas de red.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Network Downtime Liability (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Riesgo de Guerra</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Exclusión estándar para conflictos bélicos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>War Risk Exclusión (EE.UU.)</li>
+                    <li>Cláusula de Guerra (general)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section S -->
+        <section id="S" class="letter-section">
+            <h2 class="letter-header">S</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Salvamento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Derecho de la aseguradora a tomar posesión de bienes dañados tras indemnizar.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Salvamento (general)</li>
+                    <li>Recupero (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Score de Susceptibilidad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Índice de vulnerabilidad a desastres naturales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Susceptibility Score (reaseguro)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro Agrícola</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para cultivos por eventos climáticos o plagas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Seguro Agropecuario (México)</li>
+                    <li>Seguro de Cosecha (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro Colectivo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Póliza que cubre a un grupo (ej.: empleados de una empresa).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Seguro Grupal (México, Colombia)</li>
+                    <li>Contrato Colectivo (Chile)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Cadena de Bloques</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Protección para smart contracts y wallets.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Blockchain Insurance (global)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Cascos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para embarcaciones (casco y maquinaría).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Hull & Machinery Insurance (internacional)</li>
+                    <li>Protección Naval (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Crédito</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por impago de deudores.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Seguro de Cobranza (México)</li>
+                    <li>Garantía de Crédito (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Cumplimiento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Garantiza obligaciones contractuales o legales.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Fianza de Cumplimiento (México)</li>
+                    <li>Surety Bond (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Depósitos</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Protección a ahorrantes en caso de quiebra bancaria.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Deposit Insurance (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Equipo 5G</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para antenas y equipos de nueva generación.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>5G Infrastructure Insurance (Asia)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro de Mortandad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura por muerte de animales de producción.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Seguro Ganadero (México)</li>
+                    <li>Livestock Mortality Insurance (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Seguro Dotal</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Pago al asegurado si vive hasta cierta edad.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Seguro de Supervivencia (Argentina)</li>
+                    <li>Endowment Insurance (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Servicios en la Nube</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cobertura para infraestructura cloud.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cloud Computing Coverage (EE.UU.)</li>
+                    <li>Protección de Nube (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Siniestralidad Ajustada</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Índice que considera frecuencia y severidad de siniestros.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Loss Ratio Adjusted (EE.UU.)</li>
+                    <li>Siniestralidad Ponderada (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Siniestro</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Evento cubierto que genera una reclamación (ej: accidente, robo).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Siniestro (general)</li>
+                    <li>Pérdida (EE.UU.)</li>
+                    <li>Ocurrencia (en reaseguros)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 SOA (Seguro Obligatorio de Automóviles)</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Seguro mínimo legal para circular en Costa Rica (daños a terceros).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>SOAT (Colombia, Perú)</li>
+                    <li>Seguro Obligatorio (Argentina)</li>
+                    <li>Daños a Terceros (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Subrogación Inverso</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cuando el asegurado pierde derechos al aceptar indemnización.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Equitable Subrogation (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Suma Asegurada</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Valor máximo que pagará la aseguradora en un siniestro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Suma Asegurada (general)</li>
+                    <li>Capital Asegurado (España)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section T -->
+        <section id="T" class="letter-section">
+            <h2 class="letter-header">T</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Tabla de Mortalidad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Estadística usada en seguros de vida para calcular primas y riesgos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Tabla Actuarial (general)</li>
+                    <li>Tabla de Esperanza de Vida (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tabla de Mortalidad Mejorada</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cálculo de primas con expectativas de vida prolongada.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Enhanced Mortality Table (EE.UU.)</li>
+                    <li>Tabla de Longevidad (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tarifa de Mercado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Prima basada en competencia, no solo en riesgo técnico.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Prima Comercial (general)</li>
+                    <li>Market Rate (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tarifa de Riesgo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Prima ajustada según peligrosidad del asegurado.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Prima de Peligrosidad (Argentina)</li>
+                    <li>Risk Premium (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tarifa Técnica</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Prima calculada basada en riesgo estadístico.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Prima Pura (actuarial)</li>
+                    <li>Costo Actuarial (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tasa de Rendimiento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Garantía de producción mínima por hectárea.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Rendimiento Asegurado (Colombia)</li>
+                    <li>Yield Guarantee (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tomador del Seguro</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Persona que contrata y paga la póliza (puede ser distinto del asegurado).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Contratante (Chile, Perú)</li>
+                    <li>Tomador (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tower Sharing Liability</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Responsabilidad por compartir torres de telefonía.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Responsabilidad Compartida de Torres (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tratado de Exceso de Siniestralidad</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Reaseguro que activa cuando pérdidas superan umbral.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Stop Loss Treaty (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Tribunal de Arbitraje</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Mecanismo extrajudicial para resolver disputas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Junta de Arbitraje (México)</li>
+                    <li>Insurance Ombudsman (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section U -->
+        <section id="U" class="letter-section">
+            <h2 class="letter-header">U</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Underwriting de Riesgo Paramétrico</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Suscripción basada en triggers objetivos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Index-Based Underwriting (global)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Usuario de Flota</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Conductor autorizado en pólizas para vehículos corporativos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Conductor Habilitado (Argentina)</li>
+                    <li>Driver Listed (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Usuario Designado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Conductor específicamente autorizado en pólizas de flotas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Driver Schedule (EE.UU.)</li>
+                    <li>Conductor Registrado (Argentina)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Usuario No Autorizado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Conductor no registrado en póliza que causa siniestro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Tercero No Habilitado (legal)</li>
+                    <li>Unlisted Driver (EE.UU.)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section V -->
+        <section id="V" class="letter-section">
+            <h2 class="letter-header">V</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Valor Actual Neto</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Cálculo de flujos futuros descontados.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>VAN (finanzas)</li>
+                    <li>Net Present Value (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Valor Asegurado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Valor económico asignado a un bien en la póliza.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Valor en Seguro (México)</li>
+                    <li>Valor Convenido (si es fijado por acuerdo)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Valor de Mercado</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Precio de venta razonable de un bien antes del siniestro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Valor Comercial (general)</li>
+                    <li>Fair Market Value (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Valor de Mercado Agrícola</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Precio de referencia para indemnizaciones.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Precio de Mercado (general)</li>
+                    <li>Commodity Price (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Valor de Reposición</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Costo de reemplazar un bien nuevo por uno similar.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Valor de Reemplazo (general)</li>
+                    <li>Reproduction Cost (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Vicio Oculto</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Defecto no evidente que causa daños (excluido en muchas pólizas).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Defecto Encubierto (legal)</li>
+                    <li>Vicio Redhibitorio (Chile)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section W -->
+        <section id="W" class="letter-section">
+            <h2 class="letter-header">W</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Warranty</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Garantía extendida para equipos (anglicismo usado en seguros técnicos).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Garantía Adicional (general)</li>
+                    <li>Extensión de Cobertura (México)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Warranty Clause</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Condición que suspende cobertura hasta cumplir requisitos.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cláusula de Garantía (traducción)</li>
+                    <li>Condition Precedent (Reino Unido)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Warranty de Buen Fin</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Garantiza que un proyecto se completará con fondos suficientes.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Completion Bond (internacional)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Warranty de Mantenimiento</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Requisito de conservar bienes asegurados en condiciones óptimas.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Cláusula de Conservación (legal)</li>
+                    <li>Maintenance Clause (EE.UU.)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Warranty de Ubicación</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Requiere que bienes permanezcan en lugar especificado.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Location Warranty (reaseguro)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+
+        <!-- Section Z -->
+        <section id="Z" class="letter-section">
+            <h2 class="letter-header">Z</h2>
+            <div class="term-card">
+                <h3>🇨🇷 Zona de Cobertura</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Área geográfica donde aplican las garantías del seguro.</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Territorial Limit (EE.UU.)</li>
+                    <li>Ámbito Territorial (España)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Zona de Exclusión</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Área geográfica sin cobertura (ej.: zonas de guerra).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Área de Riesgo No Asegurable (general)</li>
+                    <li>Territorio Excluido (reaseguro)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Zona de Franquicia</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Área geográfica con deducibles especiales (ej.: zonas sísmicas).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Área de Deducible Aumentado (México)</li>
+                    <li>High-Risk Zone (reaseguro)</li>
+                </ul>
+            </div>
+            <div class="term-card">
+                <h3>🇨🇷 Zona de Riesgo</h3>
+                <h4>💡 Significado en Costa Rica 📘:</h4>
+                <p>Área geográfica con mayor probabilidad de siniestros (ej.: zonas inundables).</p>
+                <h4>🌎 Equivalente en otros países 📕:</h4>
+                <ul>
+                    <li>Área de Alto Riesgo (general)</li>
+                    <li>Zona de Exclusión (si no se cubre)</li>
+                </ul>
+            </div>
+            <a href="#alpha-nav" class="back-to-top">↑ Volver al Índice</a>
+        </section>
+        
+    </main>
+    <footer class="bg-sky-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Consis International. Todos los derechos reservados.</p>
+            <p class="text-sm text-sky-200 mt-2">Plan de Actividades de Capacitación para el Nuevo Core de Grupo INS.</p>
+			<p class="text-sm text-sky-200 mt-2">Elaborado por Gerencia de Formación - Consis University.</p>
+        </div>
+    </footer>
+    <script>
+        // --- SCRIPT CORREGIDO ---
+        
+        // Script para los enlaces de navegación del alfabeto (A, B, C...)
+        // Esto aplica un desplazamiento para que el título de la sección no quede oculto por la barra de navegación fija.
+        document.querySelectorAll('.alpha-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    const headerOffset = 80; // Espacio para la barra de navegación pegajosa
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                         top: offsetPosition,
+                         behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Script para los enlaces "Volver al Índice"
+        // Esto simplemente desplaza la vista al elemento del índice, sin cálculo de desplazamiento.
+        document.querySelectorAll('.back-to-top').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href'); // Será "#alpha-nav"
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                     targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                     });
+                }
+            });
+        });
+
+
+        // Funcionalidad del botón para imprimir el PDF
+        const printBtn = document.getElementById('print-pdf-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', function() {
+                // El usuario especificó dejar un placeholder para la ruta del PDF
+                const pdfPath = 'Glosario de Términos de Seguros INS- INSTITUTO NACIONAL DE SEGUROS.pdf'; 
+                const pdfWindow = window.open(pdfPath, '_blank');
+                if (pdfWindow) {
+                    pdfWindow.onload = function() {
+                        // Un ligero retraso puede ayudar a asegurar que el visor de PDF se haya cargado
+                        setTimeout(function() {
+                            try {
+                                pdfWindow.print();
+                            } catch (e) {
+                                console.error("La impresión fue bloqueada o cancelada.", e);
+                                // Informar al usuario que la impresión podría estar bloqueada.
+                                pdfWindow.alert("No se pudo iniciar la impresión automáticamente. Por favor, use la función de impresión de su navegador (Ctrl+P o Cmd+P).");
+                            }
+                        }, 1000);
+                    };
+                } else {
+                    // Esta alerta es un respaldo si la ventana emergente es bloqueada.
+                    alert('Para imprimir, por favor permita las ventanas emergentes de este sitio.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
